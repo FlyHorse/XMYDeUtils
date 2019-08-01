@@ -143,7 +143,8 @@ public class AutoRemoveInvalidScripts
 				}
 
 				serializedObject.ApplyModifiedProperties();
-				PrefabUtility.CreatePrefab(AssetDatabase.GetAssetPath(go), gameObject);
+				PrefabUtility.ReplacePrefab(gameObject, go);
+				//PrefabUtility.CreatePrefab(AssetDatabase.GetAssetPath(go), gameObject);
 				GameObject.DestroyImmediate(gameObject);
 			}
 		}
